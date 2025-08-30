@@ -1,0 +1,79 @@
+Laravel Developer – Final Requirements
+
+Objective: Build a secure and optimized Laravel web application
+demonstrating expertise in: - Multi-authentication system - Real-time
+updates using WebSockets - Web push notifications - Efficient
+large-scale product import using Laravel queues and batch processing
+
+Tasks & Features:
+
+1.  Multiple Authentication Guards
+
+-   Implement separate login, registration, and dashboards for Admin and
+    Customer users.
+-   Use Laravel’s built-in multi-authentication system (Auth::guard()).
+-   Protect routes using middleware per guard (e.g., auth:admin,
+    auth:customer).
+
+2.  Product Management Admin Features:
+
+-   CRUD operations for products (fields: name, description, price,
+    image, category, stock).
+-   Bulk import of up to 100,000 products via CSV/Excel using chunked
+    processing and Laravel queues.
+-   Default image should be used if no image is provided in the CSV.
+-   Provide products_sample_import.csv with demo data used to test
+    import functionality.
+
+Customer Features: - Browse, search, and paginate product listings.
+
+3.  Order Management Customer:
+
+-   Place orders for available products.
+
+Admin: - View and update order status (Pending, Shipped, Delivered).
+
+4.  Real-Time Updates (WebSockets)
+
+-   Broadcast order status updates in real-time to customers (without
+    page refresh).
+-   Show real-time online/offline presence of users (Admins and
+    Customers) in the Admin dashboard.
+-   Store presence status in the database.
+-   Use Presence Channels for online/offline tracking.
+
+5.  Web Push Notifications
+
+-   Integrate a push notification service (any of your choice).
+-   Notify Customers via browser push notifications & WebSockets when
+    Admin updates order status.
+-   Must work instantly (no polling).
+
+6.  Optimized Product Import
+
+-   Admin uploads CSV/Excel files with up to 100,000 products.
+-   Use chunked reading and processing.
+-   Validate each row and queue the job for background processing.
+-   Prevent timeouts by using queues.
+
+Testing Requirements: - Add at least one feature test and one unit test
+(using Laravel’s php artisan test). Suggested test cases: - Product
+creation - Order placement - Bulk product import logic and validation
+
+UI Expectations: - Backend-focused assignment. - Minimal
+HTML/Blade-based UI is sufficient (design not a priority). - Clear
+presentation of backend features is required.
+
+Deliverables: 1. Codebase pushed to a public Git repository (no zip
+uploads). 2. products_sample_import.csv included in the repo. 3.
+README.md documentation covering: - Setup instructions - Multi-auth
+strategy & route protection details - WebSocket stack used - Web push
+notification setup & subscription logic - Bulk import implementation &
+optimizations - Testing guide (how to run tests, coverage details) -
+Architectural/performance decisions 4. Screencast (Optional): 3–5 minute
+walkthrough of app + code.
+
+Rules & Notes: - All code must be original (no AI/copilot/tutorial
+copy-paste). - Use WebSocket broadcasting only (no AJAX polling). -
+Commit history should show step-by-step development. - Focus on clarity,
+security, and performance.

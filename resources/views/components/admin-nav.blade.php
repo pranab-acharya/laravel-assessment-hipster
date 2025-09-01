@@ -8,6 +8,11 @@
             <a href="{{ route('admin.dashboard') }}"
                 class="text-sm hover:text-indigo-600 {{ $currentRoute === 'admin.dashboard' ? 'text-indigo-600 font-semibold' : 'text-gray-700' }}"
                 wire:navigate>
+                Dashboard
+            </a>
+            <a href="{{ route('admin.products') }}"
+                class="text-sm hover:text-indigo-600 {{ $currentRoute === 'admin.products' ? 'text-indigo-600 font-semibold' : 'text-gray-700' }}"
+                wire:navigate>
                 Products
             </a>
             <a href="{{ route('admin.products.import') }}"

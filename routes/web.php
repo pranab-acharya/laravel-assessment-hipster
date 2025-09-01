@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Admin\Auth\Login;
+use App\Livewire\Admin\Dashboard;
 use App\Livewire\Admin\Notifications as AdminNotifications;
 use App\Livewire\Admin\OrdersManager;
 use App\Livewire\Admin\ProductImport;
@@ -37,7 +38,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('login', Login::class)->name('login');
 
     Route::middleware('admin')->group(function () {
-        Route::get('products', ProductManager::class)->name('dashboard');
+        Route::get('dashboard', Dashboard::class)->name('dashboard');
+        Route::get('products', ProductManager::class)->name('products');
         Route::get('products/import', ProductImport::class)->name('products.import');
         Route::get('orders', OrdersManager::class)->name('orders');
         Route::get('notifications', AdminNotifications::class)->name('notifications');

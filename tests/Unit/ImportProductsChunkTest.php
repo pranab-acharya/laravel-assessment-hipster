@@ -11,7 +11,10 @@ class ImportProductsChunkTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_import_skips_rows_without_name_and_sets_default_image_and_upserts(): void
+    /**
+     * @test
+     */
+    public function import_skips_rows_without_name_and_sets_default_image_and_upserts(): void
     {
         $header = ['name', 'description', 'price', 'image', 'category', 'stock'];
         $rows = [

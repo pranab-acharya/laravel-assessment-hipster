@@ -134,6 +134,9 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="mt-4 flex justify-end">
+                    {{ $products->links(data: ['scrollTo' => false]) }}
+                </div>
             </div>
         </div>
     </div>

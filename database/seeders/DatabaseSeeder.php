@@ -18,16 +18,17 @@ class DatabaseSeeder extends Seeder
     {
         // Customers
         User::factory(9)->create();
+
         User::factory()->create([
             'name' => 'Customer Demo',
-            'email' => 'customer@example.com',
+            'email' => 'customer@gmail.com',
             'password' => Hash::make('password'),
         ]);
 
         // Admins
         Admin::factory()->create([
             'name' => 'Admin Demo',
-            'email' => 'admin@example.com',
+            'email' => 'admin@hipster.com',
             'password' => Hash::make('password'),
         ]);
 

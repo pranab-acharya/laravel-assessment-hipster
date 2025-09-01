@@ -6,11 +6,9 @@ use App\Enums\OrderStatus;
 use App\Livewire\Customer\Checkout;
 use App\Models\Admin;
 use App\Models\Order;
-use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 use Livewire\Livewire;
 use Tests\TestCase;
@@ -19,7 +17,10 @@ class OrderPlacementTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_customer_can_place_order_and_stock_is_decremented_and_cart_cleared(): void
+    /**
+     * @test
+     */
+    public function customer_can_place_order_and_stock_is_decremented_and_cart_cleared(): void
     {
         Notification::fake();
 
@@ -76,7 +77,10 @@ class OrderPlacementTest extends TestCase
         Notification::assertCount(2);
     }
 
-    public function test_place_order_fails_when_cart_empty(): void
+    /**
+     * @test
+     */
+    public function place_order_fails_when_cart_empty(): void
     {
         $user = User::factory()->create();
         $this->actingAs($user, 'web');

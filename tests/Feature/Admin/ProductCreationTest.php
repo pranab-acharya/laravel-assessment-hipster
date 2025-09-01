@@ -12,7 +12,10 @@ class ProductCreationTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_admin_can_create_product_without_image_and_default_is_used(): void
+    /**
+     * @test
+     */
+    public function admin_can_create_product_without_image_and_default_is_used(): void
     {
         Livewire::test(ProductManager::class)
             ->set('name', 'Test Product')
